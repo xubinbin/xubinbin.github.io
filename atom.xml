@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[言午木杉木杉]]></title>
+  <link href="http://xubinbin.github.io/atom.xml" rel="self"/>
+  <link href="http://xubinbin.github.io/"/>
+  <updated>2014-03-20T00:26:33+08:00</updated>
+  <id>http://xubinbin.github.io/</id>
+  <author>
+    <name><![CDATA[REEL]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+</feed>
