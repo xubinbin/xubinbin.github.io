@@ -1,0 +1,15 @@
+<img src="/images/head-photo.jpg" alt="head photo">
+<hgroup>
+	<h1><a href="{{ root_url }}/">{{ site.title }}</a></h1>
+	{% if site.subtitle %}
+    	<h2>{{ site.subtitle }}</h2>
+  	{% endif %}
+</hgroup>
+<div class="social">
+	{% if site.weibo_user %}
+    	<a class="weibo" href="http://www.weibo.com/{{ site.weibo_user }}" title="Weibo"><img src="/images/social/weibo.png"></a>
+    {% endif %}
+    {% if site.github_user %}
+		<a class="github" href="https://github.com/{{ site.github_user }}" title="GitHub"><img src="/images/social/github.png"></a>
+	{% endif %}
+</div>

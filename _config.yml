@@ -1,11 +1,11 @@
-# ----------------------- #
+﻿# ----------------------- #
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
-title: My Octopress Blog
-subtitle: A blogging framework for hackers.
-author: Your Name
+url: http://xubinbin.github.io
+title: 言午木杉木杉
+subtitle: 记录、学习、分享.
+author: REEL
 simple_search: https://www.google.com/search
 description:
 

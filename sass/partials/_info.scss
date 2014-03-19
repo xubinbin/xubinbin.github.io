@@ -1,0 +1,61 @@
+@mixin social-style($imgPath, $color){
+	border: 1px solid $color;
+	background: image-url($imgPath) center no-repeat $color;
+}
+body .ower-info {
+	border: none;
+	text-align: center;
+	> img {
+		height: auto;
+		width: 80px;
+		@include border-radius(50%);
+		border: 3px solid #fff;
+	}
+	h1 {
+		a {
+			color: #fff;
+		}
+		font-size: 24px;
+		margin-bottom: 0;
+	}
+	h2{
+		color: #fff;
+		font-size: 15px;
+	}
+
+	.social {
+		a {
+			@include border-radius(50%);
+			@include inline-block;
+			text-indent: -9999px;
+			opacity: 0.5;
+			width: 28px;
+			height: 28px;
+			@include transition(0.3s);
+			&:hover{
+				opacity: 1;
+			}
+
+			&.weibo {
+				@include social-style('/images/social/weibo.png', #e32529)
+			}
+
+			&.github {
+				@include social-style('/images/social/github.png', #222);
+			}
+		}
+	}
+
+	@media only screen and (min-width: 1152px) {
+		padding-left: 25px;
+		h1 {
+			margin-bottom: 1em;
+			a {
+				@include link-colors($link-color, $hover: $link-color-hover, $focus: $link-color-hover, $visited: $link-color-visited, $active: $link-color-active);
+			}
+		}
+		h2{
+			color: #777;
+		}
+	}
+}

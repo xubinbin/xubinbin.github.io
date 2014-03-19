@@ -1,0 +1,14 @@
+body > footer {
+  @extend .sans;
+  font-size: .8em;
+  color: $footer-color;
+  @include background-image(linear-gradient(top, rgb(38, 38, 38), rgb(43, 43, 43)));
+  position: relative;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  z-index: 1;
+  a {
+    @include link-colors($footer-link-color, #fff, $visited: $footer-link-color);
+  }
+  p:last-child { margin-bottom: 0; }
+}
