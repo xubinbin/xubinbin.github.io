@@ -4,7 +4,7 @@
   <title><![CDATA[言午木杉木杉]]></title>
   <link href="http://xubinbin.github.io/atom.xml" rel="self"/>
   <link href="http://xubinbin.github.io/"/>
-  <updated>2014-03-20T00:26:33+08:00</updated>
+  <updated>2014-03-20T14:16:26+08:00</updated>
   <id>http://xubinbin.github.io/</id>
   <author>
     <name><![CDATA[REEL]]></name>
@@ -12,5 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My first octopress blog]]></title>
+    <link href="http://xubinbin.github.io/blog/2014/03/20/my-first-octopress-blog/"/>
+    <updated>2014-03-20T13:20:18+08:00</updated>
+    <id>http://xubinbin.github.io/blog/2014/03/20/my-first-octopress-blog</id>
+    <content type="html"><![CDATA[<p>这两天折腾博客的框架基本上算完成了，现在也该写点内容了。有很多想写的，却反而不知道从哪里写起！
+送给自己的话：2014梦开始的地方，有梦就不会结束，有些事情现在不做，真的可能一辈子都不会做了！</p>
+]]></content>
+  </entry>
   
 </feed>
