@@ -4,7 +4,7 @@
   <title><![CDATA[言午木杉木杉]]></title>
   <link href="http://xubinbin.github.io/atom.xml" rel="self"/>
   <link href="http://xubinbin.github.io/"/>
-  <updated>2014-03-21T22:55:31+08:00</updated>
+  <updated>2014-03-22T00:34:38+08:00</updated>
   <id>http://xubinbin.github.io/</id>
   <author>
     <name><![CDATA[REEL]]></name>
@@ -12,6 +12,17 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[分享图片]]></title>
+    <link href="http://xubinbin.github.io/blog/2014/03/21/mind-and-soul/"/>
+    <updated>2014-03-21T23:32:26+08:00</updated>
+    <id>http://xubinbin.github.io/blog/2014/03/21/mind-and-soul</id>
+    <content type="html"><![CDATA[<p><img src="http://xubinbin.qiniudn.com/IMG_20140131-135825.jpg?imageView2/1/w/300/h/305" title="night" alt="Alt night" /></p>
+
+<p>你生命中所发生的一切，都是你吸引来的。它们是被你心中所保持的‘心相’吸引而来，它们就是你所想的。</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My first octopress blog]]></title>
