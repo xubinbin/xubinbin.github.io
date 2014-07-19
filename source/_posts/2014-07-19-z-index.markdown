@@ -1,0 +1,138 @@
+---
+layout: post
+title: "详解定位之二：z-index属性"
+date: 2014-07-19 22:46:02 +0800
+comments: true
+categories: 
+---
+**首先，接着上一篇博文的内容，先简单说一说CSS中关于定位设置的position属性。**
+
+在CSS中的相关内容是：
+position: relative | absolute | static | fixed
+
+static（静态）：没有特别的设定，遵循基本的定位规定，不能通过z-index进行层次分级。
+
+relative（相对定位）：元素不可层叠、不脱离文档流，参照自身静态位置通过TOP、RIGHT、BOTTOM、LEFT定位，并且可以通过z-index进行层次分级。
+
+absolute（绝对定位）：脱离文档流，通过TOP、RIGHT、BOTTOM、LEFT定位。选取其最近一个具有定位设置的父级元素进行绝对定位，如果元素的父级没有设置定位属性，absolute元素将以body坐标原点进行定位，可以通过z-index进行层次分级。
+
+fixed（固定定位）：这里所固定的参照对象是可视窗口而并非是body或是父级元素。可通过z-index进行层次分级。
+<!--more-->
+
+
+
+**z-index属性的用法**
+
+在CSS中的相关内容是：
+z-index: auto | number
+
+auto：遵从其父级元素的定位。
+number：无单位的整数值，可为负数。
+
+CSS中的z-index属性用于设置一个HTML元素的层叠级别，我们在使用时如果能熟练掌握以下规则，将会收到事半功倍的效果。
+
+**顺序规则**
+
+如果不对节点设置position属性，位于文档流后面的节点会默认遮盖前面的节点。
+    <div id="a">A</div>
+    <div id="b">B</div>
+![z-index-1](http://xubinbin.qiniudn.com/z-index-1.gif
+ "顺序规则")
+
+**定位规则**
+
+如果将position设为static，位于文档流后面的节点依然会遮盖前面的节点。所以，position: static; 不影响节点的遮盖关系。
+    <div id="a" style="position: static;">A</div>
+    <div id="b">B</div>
+![z-index-2](http://xubinbin.qiniudn.com/z-index-2.gif
+ "定位规则1")
+
+如果将position设为relative，absolute或者fixed，这样的节点会覆盖没有设置position属性或者属性值为static的节点，说明前者比后者的默认层级高。
+    <div id="a" style="position: relative;">A</div>
+    <div id="b">B</div>
+![z-index-3](http://xubinbin.qiniudn.com/z-index-3.gif
+ "定位规则2")
+
+在没有z-index属性干扰的情况下，结合以上的顺序规则和定位规则，我们可以做出更加复杂的结构。这里我们对A和B都不设定position，但对A的子节点A-1设定position: relative， 根据顺序规则，B会覆盖A，又根据定位规则A-1会覆盖B。
+    <div id="a">
+	    <div id="a-1" style="position: relative;">A-1</div>
+    </div>
+    <div id="b">B</div>
+![z-index-4](http://xubinbin.qiniudn.com/z-index-4.gif
+ "定位规则3")
+
+上面互相覆盖在什么时候用到这样的实现？看起来偏门，其实很常用，比如说，电子商务网站侧栏的类目展示列表就可以用这个技巧来实现。
+
+下图是某网站的类目展示区域，二级类目的悬浮层覆盖一级类目列表外框，而一级类目的节点覆盖二级类目的悬浮层。如果使用CSS实现展示效果，一级类目的外框相当于上面例子中的A，一级类目的节点相当于A-1，二级类目的悬浮层相当于B。
+
+![z-index-5](http://xubinbin.qiniudn.com/z-index-5.jpg
+ "定位规则4")
+
+**参与规则**
+
+我们尝试不用position属性，但为节点加上z-index属性。发现z-index对节点没起作用。
+    <div id="a" style="z-index:2;">A</div>
+    <div id="b" style="z-index:1;">B</div>
+    <div id="c" style="z-index:0;">C</div>
+![z-index-6](http://xubinbin.qiniudn.com/z-index-6.gif
+ "参与规则1")
+
+z-index属性仅在节点的position属性为relative，absolute或者fixed时生效。
+    <div id="a" style="z-index:2;">A</div>
+    <div id="b" style="position: relative; z-index:1;">B</div>
+    <div id="c" style="position: relative; z-index:0;">C</div>
+![z-index-7](http://xubinbin.qiniudn.com/z-index-7.gif
+ "参与规则2")
+
+**默认值规则**
+
+如果所有节点都定义了position: relative; 那么z-index为0的节点与没有定义z-index在同一层级内没有高低之分；但z-index大于等于1的节点会遮盖没有定义z-index的节点；z-index 的值为负数的节点将被没有定义z-index的节点覆盖。
+    <div id="a" style="position: relative; z-index:1;">A</div>
+    <div id="b" style="position: relative; z-index:0;">B</div>
+    <div id="c" style="position: relative;">C</div>
+    <div id="d" style="position: relative; z-index:-1;">D</div>
+![z-index-8](http://xubinbin.qiniudn.com/z-index-8.gif
+ "默认值规则1")
+
+特别注意：当position设为relative，absolute或者fixed，而没有设置z-index时，IE8以上和W3C浏览器的z-index默认值是auto，但IE6和IE7却是0。
+
+**从父规则**
+
+如果A，B节点都定义了position: relative，且A节点的z-index值比B节点大，那么A的子节点一定覆盖在B的子节点前面。
+    <div id="a" style="position: relative; z-index:1;">
+	    <div id="a-1">A-1</div>
+    </div>
+    <div id="b" style="position: relative; z-index:0;">
+	    <div id="b-1">B-1</div>
+    </div>
+![z-index-9](http://xubinbin.qiniudn.com/z-index-9.gif
+ "从父规则1")
+
+如果所有节点都定义了position: relative，且A节点的z-index和B节点一样大，但因为顺序规则，B节点覆盖在A节点前面。就算A的子节点z-index值比B的子节点大，B的子节点还是会覆盖在A的子节点前面。
+    <div id="a" style="position: relative; z-index:0;">
+	    <div id="a-1" style="position: relative; z-index:2;">A-1</div>
+    </div>
+    <div id="b" style="position: relative; z-index:0;">
+	    <div id="b-1" style="position: relative; z-index:1;">B-1</div>
+    </div>
+![z-index-10](http://xubinbin.qiniudn.com/z-index-10.gif
+ "从父规则2")
+
+因此，出现将z-index设得很大，甚至z-index：9999，却仍然没有改变层叠关系的情况。因为如果不考虑父节点的影响，子节点设得再大也没有用，这是无法逾越的层级。
+
+
+
+本文参考了以下资源：
+
+[1] [CSS z-index属性的使用方法和层级树的概念](http://www.neoease.com/css-z-index-property-and-layering-tree/)
+
+[2] [详解定位与定位应用](http://blog.sina.com.cn/s/blog_4bcf4a5e010008o0.html)
+
+
+
+
+
+
+
+
+
