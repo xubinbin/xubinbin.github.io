@@ -9,7 +9,8 @@
   <meta name="author" content="REEL">
 
   
-  <meta name="description" content="总结：给元素设置position: relative; 或position: absolute; 大部分情况下元素是在父级元素范围内定位的，唯一特殊的情况需要同时满足两个条件：当元素设置position: absolute; 且父级元素没有设置position时，元素就会突破父级元素的范围， &hellip;">
+  <meta name="description" content="首先，接着上一篇博文的内容，先简单说一说CSS中关于定位设置的position属性。 在CSS中的相关内容是：
+position: relative | absolute | static | fixed static（静态）：没有特别的设定，遵循基本的定位规定，不能通过z-index进行层次分级 &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -70,6 +71,58 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2014/07/19/z-index/">详解定位之二：z-index属性</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-19T22:46:02+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>首先，接着上一篇博文的内容，先简单说一说CSS中关于定位设置的position属性。</strong></p>
+
+<p>在CSS中的相关内容是：
+position: relative | absolute | static | fixed</p>
+
+<p>static（静态）：没有特别的设定，遵循基本的定位规定，不能通过z-index进行层次分级。</p>
+
+<p>relative（相对定位）：元素不可层叠、不脱离文档流，参照自身静态位置通过TOP、RIGHT、BOTTOM、LEFT定位，并且可以通过z-index进行层次分级。</p>
+
+<p>absolute（绝对定位）：脱离文档流，通过TOP、RIGHT、BOTTOM、LEFT定位。选取其最近一个具有定位设置的父级元素进行绝对定位，如果元素的父级没有设置定位属性，absolute元素将以body坐标原点进行定位，可以通过z-index进行层次分级。</p>
+
+<p>fixed（固定定位）：这里所固定的参照对象是可视窗口而并非是body或是父级元素。可通过z-index进行层次分级。</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2014/07/19/z-index/">阅读全文 &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -198,9 +251,44 @@
 
     </article>
   
-  <div class="pagination">
+  
+    <article>
+      
+  <header>
     
-      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+      <h1 class="entry-title"><a href="/blog/2014/03/20/my-first-octopress-blog/">My First Octopress Blog</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-03-20T13:20:18+08:00" pubdate data-updated="true">Mar 20<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>这两天折腾博客的框架基本上算完成了，现在也该写点内容了。有很多想写的，却反而不知道从哪里写起！
+送给自己的话：2014梦开始的地方，有梦就不会结束，有些事情现在不做，真的可能一辈子都不会做了！</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -211,6 +299,10 @@
     <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/19/z-index/">详解定位之二：z-index属性</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2014/07/15/relative-and-absolute/">详解定位之一：relative与absolute</a>

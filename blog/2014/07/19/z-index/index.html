@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>详解定位之二：z-index属性 - 言午木杉木杉</title>
+  <meta name="author" content="REEL">
+
+  
+  <meta name="description" content="首先，接着上一篇博文的内容，先简单说一说CSS中关于定位设置的position属性。 在CSS中的相关内容是：
+position: relative | absolute | static | fixed static（静态）：没有特别的设定，遵循基本的定位规定，不能通过z-index进行层次分级 &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://xubinbin.github.io/blog/2014/07/19/z-index">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="言午木杉木杉" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+
+</head>
+
+<body   >
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="https://www.google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:xubinbin.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <header role="banner"><div class="header-inner"></div>
+</header>
+  <div id="main">
+  	<div class="ower-info"><img src="/images/head-photo.jpg" alt="head photo">
+<hgroup>
+	<h1><a href="/">言午木杉木杉</a></h1>
+	
+    	<h2>记录、学习、分享.</h2>
+  	
+</hgroup>
+<div class="social">
+	
+    
+</div></div>
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">详解定位之二：z-index属性</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-19T22:46:02+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2014</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><strong>首先，接着上一篇博文的内容，先简单说一说CSS中关于定位设置的position属性。</strong></p>
+
+<p>在CSS中的相关内容是：
+position: relative | absolute | static | fixed</p>
+
+<p>static（静态）：没有特别的设定，遵循基本的定位规定，不能通过z-index进行层次分级。</p>
+
+<p>relative（相对定位）：元素不可层叠、不脱离文档流，参照自身静态位置通过TOP、RIGHT、BOTTOM、LEFT定位，并且可以通过z-index进行层次分级。</p>
+
+<p>absolute（绝对定位）：脱离文档流，通过TOP、RIGHT、BOTTOM、LEFT定位。选取其最近一个具有定位设置的父级元素进行绝对定位，如果元素的父级没有设置定位属性，absolute元素将以body坐标原点进行定位，可以通过z-index进行层次分级。</p>
+
+<p>fixed（固定定位）：这里所固定的参照对象是可视窗口而并非是body或是父级元素。可通过z-index进行层次分级。</p>
+
+<!--more-->
+
+
+<p><strong>z-index属性的用法</strong></p>
+
+<p>在CSS中的相关内容是：
+z-index: auto | number</p>
+
+<p>auto：遵从其父级元素的定位。
+number：无单位的整数值，可为负数。</p>
+
+<p>CSS中的z-index属性用于设置一个HTML元素的层叠级别，我们在使用时如果能熟练掌握以下规则，将会收到事半功倍的效果。</p>
+
+<p><strong>顺序规则</strong></p>
+
+<p>如果不对节点设置position属性，位于文档流后面的节点会默认遮盖前面的节点。</p>
+
+<pre><code>&lt;div id="a"&gt;A&lt;/div&gt;
+&lt;div id="b"&gt;B&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-1.gif" title="顺序规则" alt="z-index-1" /></p>
+
+<p><strong>定位规则</strong></p>
+
+<p>如果将position设为static，位于文档流后面的节点依然会遮盖前面的节点。所以，position: static; 不影响节点的遮盖关系。</p>
+
+<pre><code>&lt;div id="a" style="position: static;"&gt;A&lt;/div&gt;
+&lt;div id="b"&gt;B&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-2.gif" title="定位规则1" alt="z-index-2" /></p>
+
+<p>如果将position设为relative，absolute或者fixed，这样的节点会覆盖没有设置position属性或者属性值为static的节点，说明前者比后者的默认层级高。</p>
+
+<pre><code>&lt;div id="a" style="position: relative;"&gt;A&lt;/div&gt;
+&lt;div id="b"&gt;B&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-3.gif" title="定位规则2" alt="z-index-3" /></p>
+
+<p>在没有z-index属性干扰的情况下，结合以上的顺序规则和定位规则，我们可以做出更加复杂的结构。这里我们对A和B都不设定position，但对A的子节点A-1设定position: relative， 根据顺序规则，B会覆盖A，又根据定位规则A-1会覆盖B。</p>
+
+<pre><code>&lt;div id="a"&gt;
+    &lt;div id="a-1" style="position: relative;"&gt;A-1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="b"&gt;B&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-4.gif" title="定位规则3" alt="z-index-4" /></p>
+
+<p>上面互相覆盖在什么时候用到这样的实现？看起来偏门，其实很常用，比如说，电子商务网站侧栏的类目展示列表就可以用这个技巧来实现。</p>
+
+<p>下图是某网站的类目展示区域，二级类目的悬浮层覆盖一级类目列表外框，而一级类目的节点覆盖二级类目的悬浮层。如果使用CSS实现展示效果，一级类目的外框相当于上面例子中的A，一级类目的节点相当于A-1，二级类目的悬浮层相当于B。</p>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-5.jpg" title="定位规则4" alt="z-index-5" /></p>
+
+<p><strong>参与规则</strong></p>
+
+<p>我们尝试不用position属性，但为节点加上z-index属性。发现z-index对节点没起作用。</p>
+
+<pre><code>&lt;div id="a" style="z-index:2;"&gt;A&lt;/div&gt;
+&lt;div id="b" style="z-index:1;"&gt;B&lt;/div&gt;
+&lt;div id="c" style="z-index:0;"&gt;C&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-6.gif" title="参与规则1" alt="z-index-6" /></p>
+
+<p>z-index属性仅在节点的position属性为relative，absolute或者fixed时生效。</p>
+
+<pre><code>&lt;div id="a" style="z-index:2;"&gt;A&lt;/div&gt;
+&lt;div id="b" style="position: relative; z-index:1;"&gt;B&lt;/div&gt;
+&lt;div id="c" style="position: relative; z-index:0;"&gt;C&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-7.gif" title="参与规则2" alt="z-index-7" /></p>
+
+<p><strong>默认值规则</strong></p>
+
+<p>如果所有节点都定义了position: relative; 那么z-index为0的节点与没有定义z-index在同一层级内没有高低之分；但z-index大于等于1的节点会遮盖没有定义z-index的节点；z-index 的值为负数的节点将被没有定义z-index的节点覆盖。</p>
+
+<pre><code>&lt;div id="a" style="position: relative; z-index:1;"&gt;A&lt;/div&gt;
+&lt;div id="b" style="position: relative; z-index:0;"&gt;B&lt;/div&gt;
+&lt;div id="c" style="position: relative;"&gt;C&lt;/div&gt;
+&lt;div id="d" style="position: relative; z-index:-1;"&gt;D&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-8.gif" title="默认值规则1" alt="z-index-8" /></p>
+
+<p>特别注意：当position设为relative，absolute或者fixed，而没有设置z-index时，IE8以上和W3C浏览器的z-index默认值是auto，但IE6和IE7却是0。</p>
+
+<p><strong>从父规则</strong></p>
+
+<p>如果A，B节点都定义了position: relative，且A节点的z-index值比B节点大，那么A的子节点一定覆盖在B的子节点前面。</p>
+
+<pre><code>&lt;div id="a" style="position: relative; z-index:1;"&gt;
+    &lt;div id="a-1"&gt;A-1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="b" style="position: relative; z-index:0;"&gt;
+    &lt;div id="b-1"&gt;B-1&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-9.gif" title="从父规则1" alt="z-index-9" /></p>
+
+<p>如果所有节点都定义了position: relative，且A节点的z-index和B节点一样大，但因为顺序规则，B节点覆盖在A节点前面。就算A的子节点z-index值比B的子节点大，B的子节点还是会覆盖在A的子节点前面。</p>
+
+<pre><code>&lt;div id="a" style="position: relative; z-index:0;"&gt;
+    &lt;div id="a-1" style="position: relative; z-index:2;"&gt;A-1&lt;/div&gt;
+&lt;/div&gt;
+&lt;div id="b" style="position: relative; z-index:0;"&gt;
+    &lt;div id="b-1" style="position: relative; z-index:1;"&gt;B-1&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><img src="http://xubinbin.qiniudn.com/z-index-10.gif" title="从父规则2" alt="z-index-10" /></p>
+
+<p>因此，出现将z-index设得很大，甚至z-index：9999，却仍然没有改变层叠关系的情况。因为如果不考虑父节点的影响，子节点设得再大也没有用，这是无法逾越的层级。</p>
+
+<p>本文参考了以下资源：</p>
+
+<p>[1] <a href="http://www.neoease.com/css-z-index-property-and-layering-tree/">CSS z-index属性的使用方法和层级树的概念</a></p>
+
+<p>[2] <a href="http://blog.sina.com.cn/s/blog_4bcf4a5e010008o0.html">详解定位与定位应用</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">REEL</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2014-07-19T22:46:02+08:00" pubdate data-updated="true">Jul 19<span>th</span>, 2014</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/07/15/relative-and-absolute/" title="Previous Post: 详解定位之一：relative与absolute">&laquo; 详解定位之一：relative与absolute</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h3>发表评论</h3>
+	<div id="duoshuo" aria-live="polite"><!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread" data-url="http://xubinbin.github.io"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"xubinbin"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = 'http://static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END --></div>
+  </section>
+
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2014/07/19/z-index/">详解定位之二：z-index属性</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/07/15/relative-and-absolute/">详解定位之一：relative与absolute</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/24/how-to-install-git-on-windows/">在Windows下安装Git的详细步骤及说明</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/21/mind-and-soul/">分享图片</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/03/20/my-first-octopress-blog/">My First Octopress Blog</a>
+      </li>
+    
+  </ul>
+</section>
+
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2014 - REEL -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+
+
+
+
+
+
+
+</body>
+</html>
