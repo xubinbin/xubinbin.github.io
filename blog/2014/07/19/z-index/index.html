@@ -131,7 +131,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-1.gif" title="顺序规则" alt="z-index-1" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-1.gif" title="顺序规则" alt="Alt z-index-1" /></p>
 
 <p><strong>定位规则</strong></p>
 
@@ -141,7 +141,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-2.gif" title="定位规则1" alt="z-index-2" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-2.gif" title="定位规则1" alt="Alt z-index-2" /></p>
 
 <p>如果将position设为relative，absolute或者fixed，这样的节点会覆盖没有设置position属性或者属性值为static的节点，说明前者比后者的默认层级高。</p>
 
@@ -149,7 +149,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-3.gif" title="定位规则2" alt="z-index-3" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-3.gif" title="定位规则2" alt="Alt z-index-3" /></p>
 
 <p>在没有z-index属性干扰的情况下，结合以上的顺序规则和定位规则，我们可以做出更加复杂的结构。这里我们对A和B都不设定position，但对A的子节点A-1设定position: relative， 根据顺序规则，B会覆盖A，又根据定位规则A-1会覆盖B。</p>
 
@@ -159,13 +159,13 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-4.gif" title="定位规则3" alt="z-index-4" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-4.gif" title="定位规则3" alt="Alt z-index-4" /></p>
 
 <p>上面互相覆盖在什么时候用到这样的实现？看起来偏门，其实很常用，比如说，电子商务网站侧栏的类目展示列表就可以用这个技巧来实现。</p>
 
 <p>下图是某网站的类目展示区域，二级类目的悬浮层覆盖一级类目列表外框，而一级类目的节点覆盖二级类目的悬浮层。如果使用CSS实现展示效果，一级类目的外框相当于上面例子中的A，一级类目的节点相当于A-1，二级类目的悬浮层相当于B。</p>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-5.jpg" title="定位规则4" alt="z-index-5" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-5.jpg" title="定位规则4" alt="Alt z-index-5" /></p>
 
 <p><strong>参与规则</strong></p>
 
@@ -176,7 +176,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="c" style="z-index:0;"&gt;C&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-6.gif" title="参与规则1" alt="z-index-6" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-6.gif" title="参与规则1" alt="Alt z-index-6" /></p>
 
 <p>z-index属性仅在节点的position属性为relative，absolute或者fixed时生效。</p>
 
@@ -185,7 +185,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="c" style="position: relative; z-index:0;"&gt;C&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-7.gif" title="参与规则2" alt="z-index-7" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-7.gif" title="参与规则2" alt="Alt z-index-7" /></p>
 
 <p><strong>默认值规则</strong></p>
 
@@ -197,7 +197,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="d" style="position: relative; z-index:-1;"&gt;D&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-8.gif" title="默认值规则" alt="z-index-8" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-8.gif" title="默认值规则" alt="Alt z-index-8" /></p>
 
 <p>特别注意：当position设为relative，absolute或者fixed，而没有设置z-index时，IE8以上和W3C浏览器的z-index默认值是auto，但IE6和IE7却是0。</p>
 
@@ -213,7 +213,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-9.gif" title="从父规则1" alt="z-index-9" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-9.gif" title="从父规则1" alt="Alt z-index-9" /></p>
 
 <p>如果所有节点都定义了position: relative，且A节点的z-index和B节点一样大，但因为顺序规则，B节点覆盖在A节点前面。就算A的子节点z-index值比B的子节点大，B的子节点还是会覆盖在A的子节点前面。</p>
 
@@ -225,7 +225,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-10.gif" title="从父规则2" alt="z-index-10" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-10.gif" title="从父规则2" alt="Alt z-index-10" /></p>
 
 <p>因此，出现将z-index设得很大，甚至z-index：9999，却仍然没有改变层叠关系的情况。因为如果不考虑父节点的影响，子节点设得再大也没有用，这是无法逾越的层级。</p>
 

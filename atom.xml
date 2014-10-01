@@ -4,7 +4,7 @@
   <title><![CDATA[言午木杉木杉]]></title>
   <link href="http://xubinbin.github.io/atom.xml" rel="self"/>
   <link href="http://xubinbin.github.io/"/>
-  <updated>2014-10-01T14:15:33+08:00</updated>
+  <updated>2014-10-01T21:39:45+08:00</updated>
   <id>http://xubinbin.github.io/</id>
   <author>
     <name><![CDATA[REEL]]></name>
@@ -18,7 +18,7 @@
     <link href="http://xubinbin.github.io/blog/2014/10/01/id-and-class/"/>
     <updated>2014-10-01T12:44:48+08:00</updated>
     <id>http://xubinbin.github.io/blog/2014/10/01/id-and-class</id>
-    <content type="html"><![CDATA[<p><img src="http://xubinbin.qiniudn.com/id%E4%B8%8Eclass%E5%AF%B9%E5%BA%94%E5%9B%BE.jpg" title="id与class对应图" alt="Alt Git Install" /></p>
+    <content type="html"><![CDATA[<p><img src="http://xubinbin.qiniudn.com/id%E4%B8%8Eclass%E5%AF%B9%E5%BA%94%E5%9B%BE.jpg" title="id与class对应图" alt="Alt id&amp;class" /></p>
 
 <p>我们平常在用div+css制作网页时，常会用到id或者class来选择调用CSS样式属性。而就实现的页面效果而言，两者的视觉效果并无差别，那么我们什么时候该用id，什么时候又该用class，以及它们两者的命名规则和注意事项都有哪些呢？</p>
 
@@ -186,7 +186,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-1.gif" title="顺序规则" alt="z-index-1" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-1.gif" title="顺序规则" alt="Alt z-index-1" /></p>
 
 <p><strong>定位规则</strong></p>
 
@@ -196,7 +196,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-2.gif" title="定位规则1" alt="z-index-2" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-2.gif" title="定位规则1" alt="Alt z-index-2" /></p>
 
 <p>如果将position设为relative，absolute或者fixed，这样的节点会覆盖没有设置position属性或者属性值为static的节点，说明前者比后者的默认层级高。</p>
 
@@ -204,7 +204,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-3.gif" title="定位规则2" alt="z-index-3" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-3.gif" title="定位规则2" alt="Alt z-index-3" /></p>
 
 <p>在没有z-index属性干扰的情况下，结合以上的顺序规则和定位规则，我们可以做出更加复杂的结构。这里我们对A和B都不设定position，但对A的子节点A-1设定position: relative， 根据顺序规则，B会覆盖A，又根据定位规则A-1会覆盖B。</p>
 
@@ -214,13 +214,13 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="b"&gt;B&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-4.gif" title="定位规则3" alt="z-index-4" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-4.gif" title="定位规则3" alt="Alt z-index-4" /></p>
 
 <p>上面互相覆盖在什么时候用到这样的实现？看起来偏门，其实很常用，比如说，电子商务网站侧栏的类目展示列表就可以用这个技巧来实现。</p>
 
 <p>下图是某网站的类目展示区域，二级类目的悬浮层覆盖一级类目列表外框，而一级类目的节点覆盖二级类目的悬浮层。如果使用CSS实现展示效果，一级类目的外框相当于上面例子中的A，一级类目的节点相当于A-1，二级类目的悬浮层相当于B。</p>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-5.jpg" title="定位规则4" alt="z-index-5" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-5.jpg" title="定位规则4" alt="Alt z-index-5" /></p>
 
 <p><strong>参与规则</strong></p>
 
@@ -231,7 +231,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="c" style="z-index:0;"&gt;C&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-6.gif" title="参与规则1" alt="z-index-6" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-6.gif" title="参与规则1" alt="Alt z-index-6" /></p>
 
 <p>z-index属性仅在节点的position属性为relative，absolute或者fixed时生效。</p>
 
@@ -240,7 +240,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="c" style="position: relative; z-index:0;"&gt;C&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-7.gif" title="参与规则2" alt="z-index-7" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-7.gif" title="参与规则2" alt="Alt z-index-7" /></p>
 
 <p><strong>默认值规则</strong></p>
 
@@ -252,7 +252,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;div id="d" style="position: relative; z-index:-1;"&gt;D&lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-8.gif" title="默认值规则" alt="z-index-8" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-8.gif" title="默认值规则" alt="Alt z-index-8" /></p>
 
 <p>特别注意：当position设为relative，absolute或者fixed，而没有设置z-index时，IE8以上和W3C浏览器的z-index默认值是auto，但IE6和IE7却是0。</p>
 
@@ -268,7 +268,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-9.gif" title="从父规则1" alt="z-index-9" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-9.gif" title="从父规则1" alt="Alt z-index-9" /></p>
 
 <p>如果所有节点都定义了position: relative，且A节点的z-index和B节点一样大，但因为顺序规则，B节点覆盖在A节点前面。就算A的子节点z-index值比B的子节点大，B的子节点还是会覆盖在A的子节点前面。</p>
 
@@ -280,7 +280,7 @@ number：无单位的整数值，可为负数。</p>
 &lt;/div&gt;
 </code></pre>
 
-<p><img src="http://xubinbin.qiniudn.com/z-index-10.gif" title="从父规则2" alt="z-index-10" /></p>
+<p><img src="http://xubinbin.qiniudn.com/z-index-10.gif" title="从父规则2" alt="Alt z-index-10" /></p>
 
 <p>因此，出现将z-index设得很大，甚至z-index：9999，却仍然没有改变层叠关系的情况。因为如果不考虑父节点的影响，子节点设得再大也没有用，这是无法逾越的层级。</p>
 
@@ -312,7 +312,7 @@ number：无单位的整数值，可为负数。</p>
 
 <p>position: relative; 它的意思是相对定位，是参照父级元素的坐标原点为原点，配合TOP、RIGHT、BOTTOM、LEFT（下面简称TRBL）进行定位。当父级元素内有padding等CSS属性时，元素则参照父级内容区的原点进行定位。产生的相应定位情况如下图所示：</p>
 
-<p><img src="http://xubinbin.qiniudn.com/relative.gif" title="展示position relative" alt="position relative" /></p>
+<p><img src="http://xubinbin.qiniudn.com/relative.gif" title="展示position relative" alt="Alt position relative" /></p>
 
 <p>position: absolute; 它的意思是绝对定位，是参照浏览器的左上角坐标为原点，配合TRBL进行定位。但要分成两种情况，有设定TRBL和没有设定TRBL的情况。
 在没有设定TRBL时，默认参照父级内容区的原点进行定位。
@@ -322,7 +322,7 @@ number：无单位的整数值，可为负数。</p>
 
 <p>相应定位情况如下图所示：</p>
 
-<p><img src="http://xubinbin.qiniudn.com/absolute.gif" title="展示position absolute" alt="position absolute" /></p>
+<p><img src="http://xubinbin.qiniudn.com/absolute.gif" title="展示position absolute" alt="Alt position absolute" /></p>
 
 <p><strong>两者区别：</strong></p>
 
@@ -338,7 +338,7 @@ number：无单位的整数值，可为负数。</p>
 
 <p>虽然如此，但我们要记得，当父级元素内有padding等CSS属性时，这个坐标原点并不是父级元素的坐标原点，而要参照父级内容区的原点进行定位。举例说明如下图所示：</p>
 
-<p><img src="http://xubinbin.qiniudn.com/apply.png" title="relative and absolute 应用" alt="position apply" /></p>
+<p><img src="http://xubinbin.qiniudn.com/apply.png" title="relative and absolute 应用" alt="Alt position apply" /></p>
 
 <p>我们看到，这个图中父级为黑灰色区块，子级为青色区块。父级是相对定位，子级是绝对定位。子级设置了顶部位移50个像素，左倾位移50个像素。那么我们看，子级的坐标原点并不是从父级的坐标原点位移50个像素，而是从父级区块的padding左上边缘点为坐标原点（即A 点）开始位移。而父级这里如果要产生位置移动，或是浏览器窗口的大小有所变化都不会影响到这个绝对定位元素与父级的相对定位元素之间的位置关系。这个子级也不用调整数值。</p>
 
