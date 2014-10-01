@@ -20,7 +20,7 @@ categories:
 
 position: relative; 它的意思是相对定位，是参照父级元素的坐标原点为原点，配合TOP、RIGHT、BOTTOM、LEFT（下面简称TRBL）进行定位。当父级元素内有padding等CSS属性时，元素则参照父级内容区的原点进行定位。产生的相应定位情况如下图所示：
 
-![position relative](http://xubinbin.qiniudn.com/relative.gif
+![Alt position relative](http://xubinbin.qiniudn.com/relative.gif
  "展示position relative")
 
 position: absolute; 它的意思是绝对定位，是参照浏览器的左上角坐标为原点，配合TRBL进行定位。但要分成两种情况，有设定TRBL和没有设定TRBL的情况。
@@ -31,7 +31,7 @@ position: absolute; 它的意思是绝对定位，是参照浏览器的左上角
 
 相应定位情况如下图所示：
 
-![position absolute](http://xubinbin.qiniudn.com/absolute.gif
+![Alt position absolute](http://xubinbin.qiniudn.com/absolute.gif
  "展示position absolute")
 
 
@@ -50,7 +50,7 @@ position: absolute; 它的意思是绝对定位，是参照浏览器的左上角
 
 虽然如此，但我们要记得，当父级元素内有padding等CSS属性时，这个坐标原点并不是父级元素的坐标原点，而要参照父级内容区的原点进行定位。举例说明如下图所示：
 
-![position apply](http://xubinbin.qiniudn.com/apply.png
+![Alt position apply](http://xubinbin.qiniudn.com/apply.png
  "relative and absolute 应用")
 
 我们看到，这个图中父级为黑灰色区块，子级为青色区块。父级是相对定位，子级是绝对定位。子级设置了顶部位移50个像素，左倾位移50个像素。那么我们看，子级的坐标原点并不是从父级的坐标原点位移50个像素，而是从父级区块的padding左上边缘点为坐标原点（即A 点）开始位移。而父级这里如果要产生位置移动，或是浏览器窗口的大小有所变化都不会影响到这个绝对定位元素与父级的相对定位元素之间的位置关系。这个子级也不用调整数值。

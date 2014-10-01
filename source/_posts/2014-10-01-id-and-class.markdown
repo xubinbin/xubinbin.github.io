@@ -5,7 +5,7 @@ date: 2014-10-01 12:44:48 +0800
 comments: true
 categories: 
 ---
-![Alt Git Install](http://xubinbin.qiniudn.com/id%E4%B8%8Eclass%E5%AF%B9%E5%BA%94%E5%9B%BE.jpg
+![Alt id&class](http://xubinbin.qiniudn.com/id%E4%B8%8Eclass%E5%AF%B9%E5%BA%94%E5%9B%BE.jpg
  "id与class对应图")
 
 我们平常在用div+css制作网页时，常会用到id或者class来选择调用CSS样式属性。而就实现的页面效果而言，两者的视觉效果并无差别，那么我们什么时候该用id，什么时候又该用class，以及它们两者的命名规则和注意事项都有哪些呢？
