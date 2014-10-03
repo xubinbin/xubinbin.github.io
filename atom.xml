@@ -4,7 +4,7 @@
   <title><![CDATA[言午木杉木杉]]></title>
   <link href="http://xubinbin.github.io/atom.xml" rel="self"/>
   <link href="http://xubinbin.github.io/"/>
-  <updated>2014-10-01T21:39:45+08:00</updated>
+  <updated>2014-10-03T22:33:51+08:00</updated>
   <id>http://xubinbin.github.io/</id>
   <author>
     <name><![CDATA[REEL]]></name>
@@ -96,7 +96,7 @@
 
 <p>对于因多加的代码<code>&lt;div class="clear"&gt;&lt;/div&gt;</code>而引起的高度变化，可以通过如下方法解决：</p>
 
-<pre><code>clear {
+<pre><code>.clear {
      clear: both;
      height: 1px;
      margin-top: -1px;
