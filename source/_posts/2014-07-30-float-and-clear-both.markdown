@@ -48,7 +48,7 @@ CSS手册上是这样说明的：该属性的值指出了不允许有浮动对�
 首先，为了统一样式，我们新建一个样式选择器命名为“.clear”，并且对应设置选择器样式为“clear: both;”，然后在父级“`</div>`”结束前，添加一行代码`<div class="clear"></div>`，即可实现清除浮动。
 
 对于因多加的代码`<div class="clear"></div>`而引起的高度变化，可以通过如下方法解决：
-    clear {
+    .clear {
          clear: both;
          height: 1px;
          margin-top: -1px;
